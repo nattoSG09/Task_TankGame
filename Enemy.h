@@ -25,4 +25,9 @@ public:
 	//任意のゲームオブジェクトに「何メートル先でぶつかるか」を求める関数
 	int GetModelHandle() { return hModel_; }
 
+	//何かに当たった
+	//引数：pTarget 当たった相手
+	void OnCollision(GameObject* pTarget) override;
+
+
 };

@@ -31,6 +31,10 @@ void Enemy::Initialize()
 	//敵の位置をランダムに生成
 	transform_.position_.x = (float)(rand() % 401 - 200) / 10;//rand() %範囲+最小値;
 	transform_.position_.z = (float)(rand() % 401 - 200) / 10;
+
+	//あたり判定
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 1, 0), 1.0f);
+	AddCollider(collision);
 }
 
 //更新
@@ -63,4 +67,17 @@ void Enemy::Draw()
 //開放
 void Enemy::Release()
 {
+}
+
+//何かに当たった
+void Enemy::OnCollision(GameObject* pTarget)
+{
+
+	//当たったときの処理
+	//弾に当たったとき
+	if (pTarget->GetObjectName() == "Bullet")
+	{
+		pTarget->KillMe();
+		KillMe();
+	}
 }

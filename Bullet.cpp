@@ -2,6 +2,7 @@
 #include "Engine/Model.h"
 #include "Engine/Input.h"
 
+
 //コンストラクタ
 Bullet::Bullet(GameObject* parent)
     :GameObject(parent, "Bullet"), bModel_(-1)
@@ -29,8 +30,10 @@ void Bullet::Update()
 {
     
     transform_.position_.x += Move_.x;
-    transform_.position_.y+= Move_.y;
+    transform_.position_.y += Move_.y;
+    
     transform_.position_.z += Move_.z;
+    Move_.y -= 0.01f;
 
     if (transform_.position_.z > 50.0f)
     {

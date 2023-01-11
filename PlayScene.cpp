@@ -1,6 +1,7 @@
 #include "PlayScene.h"
 #include "Ground.h"
 #include "TankBody.h"
+#include "Enemy.h"
 #include "Engine/SceneManager.h"
 #include "Engine/Input.h"
 
@@ -19,6 +20,12 @@ void PlayScene::Initialize()
 {
 	Instantiate<Ground>(this);
 	Instantiate<TankBody>(this);
+
+	for (int i = 0; i < 3; i++)
+	{
+		Instantiate<Enemy>(this);
+	}
+	
 }
 
 //çXêV

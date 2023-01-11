@@ -12,7 +12,7 @@ enum
     CAM_TPS_NO_ROT,//３人称(回転なし)
     CAM_TYPE_TPS,//３人称
     CAM_TYPE_FPS, //一人称
-
+    CAM_TYPE_MAX,
 };
 
 //コンストラクタ
